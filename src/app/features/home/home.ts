@@ -5,11 +5,10 @@ import { Image } from 'primeng/image';
 
 @Component({
   selector: 'app-home',
-  imports: [ButtonModule,FormsModule,Image],
+  imports: [ButtonModule,FormsModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
-  sidephoto: string ='assets/images/photo.jpeg';
 
 }
