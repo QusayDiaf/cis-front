@@ -1,3 +1,13 @@
 @import "primeicons/primeicons.css";/* You can add global styles to this file, and also import other style files */
 
+/* إجبار المتصفح على تطبيق الخط على كل شيء */
+/* تطبيق الخط على كامل المشروع */
+* {
+  font-family: 'Google Sans', sans-serif;
+}
+
+/* استثناء أيقونات PrimeIcons وإجبارها على الاحتفاظ بخطها الأصلي */
+.pi {
+  font-family: 'primeicons' !important;
+}
 @import 'tailwindcss';
