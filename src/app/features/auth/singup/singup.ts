@@ -7,4 +7,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './singup.html',
   styleUrl: './singup.css',
 })
-export class Singup {}
+export class Singup {
+
+  hidepassword:boolean =true;
+
+  viewpassword(){
+    this.hidepassword = !this.hidepassword;
+  } 
+
+}
