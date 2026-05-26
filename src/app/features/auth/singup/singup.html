@@ -33,11 +33,11 @@
                 type="password" 
                 name="password" 
                 id="password" 
-                placeholder="●●●●●●●" 
+                placeholder="password" 
                 class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 focus:bg-white rounded-xl border border-transparent focus:border-gray-300 outline-none transition-all duration-200 text-sm font-light text-gray-700 placeholder-gray-400"
                 [type]="hidepassword ? 'password' : 'text'"/>
                 <button 
-                class=" text-gray-500 absolute right-1 top-1/5 -translate-y-1/3 text-gray-400 hover:text-gray-600 transition-colors"
+                class=" text-gray-500 absolute right-1 top-1/5 -translate-y-1/3 text-gray-400 hover:text-gray-600 transition-colors px-2 py-1 rounded-xl"
               (click)="viewpassword()"
               type="button">
                   <i [class]="hidepassword ? 'pi pi-eye text-base' : 'pi pi-eye-slash text-base'"></i>
@@ -46,7 +46,7 @@
                 type="password" 
                 name="password" 
                 id="password" 
-                placeholder="●●●●●●●" 
+                placeholder="confirm password" 
                 class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 focus:bg-white rounded-xl border border-transparent focus:border-gray-300 outline-none transition-all duration-200 text-sm font-light text-gray-700 placeholder-gray-400"
                 [type]="hidepassword ? 'password' : 'text'"/>
 
