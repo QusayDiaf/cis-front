@@ -28,7 +28,7 @@
           class="w-full mb-2 px-4 py-3 bg-gray-50 hover:bg-gray-100 focus:bg-white rounded-xl border border-transparent focus:border-gray-300 outline-none transition-all duration-200 text-sm font-light text-gray-700 placeholder-gray-400"
           formControlName="name"
         />
-        @if (singupform.get('name')?.invalid && singupform.get('name')?.dirty) {
+        @if (singupform.get('name')?.invalid && singupform.get('name')?.touched) {
           <div class="text-red-500 text-sm">Name is required and must be at least 3 characters long.</div>
         }
         
@@ -38,7 +38,7 @@
           class="w-full mb-2 px-4 py-3 bg-gray-50 hover:bg-gray-100 focus:bg-white rounded-xl border border-transparent focus:border-gray-300 outline-none transition-all duration-200 text-sm font-light text-gray-700 placeholder-gray-400"
           formControlName="email"
         />
-        @if (singupform.get('email')?.dirty && singupform.get('email')?.invalid) {
+        @if (singupform.get('email')?.touched && singupform.get('email')?.invalid) {
               <div class="text-red-500 text-xs px-2 -mt-1 mb-2">
               @if (singupform.get('email')?.errors?.['required']) {
                 <span>Email is required <i class="fa-solid fa-circle-exclamation"></i></span>
