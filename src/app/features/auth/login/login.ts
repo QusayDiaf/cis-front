@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class Login {
   loginForm!: FormGroup;
 
   // depindency injection
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder ,private http: HttpClient) {
   this.loginForm = this.fb.group({
     email: ['', 
       {
@@ -50,6 +51,23 @@ export class Login {
     console.log("the form is submitted");
     if (this.loginForm.valid) {
       console.log(this.loginForm.value ,"the form value");
+    } else {
+      console.log("the form is invalid");
+      this.loginForm.markAllAsTouched();
+    }
+    if(this.loginForm.valid){
+      const apiUrl = 'https://tripoli-auth-test.free.beeceptor.com/register';
+      console.log("loading ... the form is valid and sending to api");
+      this.http.post(apiUrl, this.loginForm.value ,{ responseType: 'text' }).subscribe({
+        next: (response) => {
+          console.log('API connection successful', response);
+          alert('sing in successfully!');
+        },
+        error: (err) => {
+          console.error('API connection error', err);
+          alert('Failed to sign in.');
+        }
+      }); 
     } else {
       console.log("the form is invalid");
       this.loginForm.markAllAsTouched();
