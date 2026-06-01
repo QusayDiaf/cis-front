@@ -1,0 +1,45 @@
+<div class="flex flex-col h-screen ">
+  
+  <header class="navbar sticky top-0 z-50 bg-white shadow-md grid grid-cols-3 items-center px-6 py-4 h-20">
+  
+    <div class="logo-container flex items-center justify-start gap-3 cursor-pointer" routerLink="/">
+        <img src="assets/images/govlink_shield_logo.svg" alt="Logo" class="w-10 h-10 object-contain">
+        <span class="site-name font-bold text-xl text-gray-800">GOLINK</span>
+    </div>
+
+    <nav class="nav-links flex items-center justify-center gap-6">
+        <a routerLink="/" fragment="hero" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+        <a routerLink="/" fragment="features" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Features</a>
+        <a routerLink="/" fragment="about" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
+        <a routerLink="/" fragment="contact" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+
+    </nav>
+    
+    <div class="flex items-center justify-end gap-3">
+        <button class="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-1.5 px-4 rounded-3xl text-sm transition-colors shadow-sm">
+          Get Started
+        </button>
+        <button 
+          routerLink="/welcome"
+          class="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-1.5 px-4 rounded-3xl text-sm transition-colors shadow-sm">
+          Learn More
+        </button>
+    </div>
+
+  </header>
+
+  <section id="hero" style="min-height: 100vh; background-color: red; padding: 100px 20px;">
+    <h1 class="text-6xl font-bold text-gray-800">The Secure Digital Government And Corporate Correspondence System</h1>
+    <p class="text-lg text-gray-600"s>The most secure way to communicate with the government and your corporation.</p>
+  </section>
+
+  <section id="features" style="min-height: 100vh; background-color: blue; padding: 100px 20px;">
+    <h2>Features</h2>
+    <p>Here you can display the services or features that your project offers.</p>
+  </section>
+
+  <section id="about" style="min-height: 100vh; background-color: green; padding: 100px 20px;">
+    <h2>About Us</h2>
+    <p>Here you can write information about yourself or your company.</p>
+  </section>
+</div>
