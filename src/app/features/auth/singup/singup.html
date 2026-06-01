@@ -87,19 +87,19 @@
           </button>
           <input
             type="password"
-            name="confirmPassword"
-            id="confirmPassword"
+            name="password_confirmation"
+            id="password_confirmation"
             placeholder="confirm password"
-            formControlName="confirmPassword"
+            formControlName="password_confirmation"
             class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 focus:bg-white rounded-xl border border-transparent focus:border-gray-300 outline-none transition-all duration-200 text-sm font-light text-gray-700 placeholder-gray-400"
             [type]="hidepassword ? 'password' : 'text'"
           />
-          @if (singupform.get('confirmPassword')?.touched && singupform.get('confirmPassword')?.invalid) {
+          @if (singupform.get('password_confirmation')?.touched && singupform.get('password_confirmation')?.invalid) {
             <div class="text-red-500 text-xs px-2 -mt-1 mb-2">
-              @if (singupform.get('confirmPassword')?.errors?.['required']) {
+              @if (singupform.get('password_confirmation')?.errors?.['required']) {
                 <span>Confirm Password is required <i class="fa-solid fa-circle-exclamation"></i></span>
               }
-              @if (singupform.get('confirmPassword')?.errors?.['mismatch']) {
+              @if (singupform.get('password_confirmation')?.errors?.['mismatch']) {
                 <span>Passwords do not match <i class="fa-solid fa-circle-exclamation"></i></span>
               }
             </div>

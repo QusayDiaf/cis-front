@@ -5,12 +5,12 @@ import { Image } from 'primeng/image';
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-welcome',
-  imports: [FormsModule,Image,ButtonModule,RouterLink],
+  imports: [FormsModule,ButtonModule,RouterLink],
   templateUrl: './welcome.html',
   styleUrl: './welcome.css',
 })
 export class Welcome {
-  sidephoto: string ='assets/images/photo.jpeg';
+  // sidephoto: string ='assets/images/photo.jpeg';
 
 
 }

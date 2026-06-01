@@ -56,7 +56,7 @@ export class Login {
       this.loginForm.markAllAsTouched();
     }
     if(this.loginForm.valid){
-      const apiUrl = 'https://tripoli-auth-test.free.beeceptor.com/register';
+      const apiUrl = 'http://127.0.0.1:8000/api/login';
       console.log("loading ... the form is valid and sending to api");
       this.http.post(apiUrl, this.loginForm.value ,{ responseType: 'text' }).subscribe({
         next: (response) => {
