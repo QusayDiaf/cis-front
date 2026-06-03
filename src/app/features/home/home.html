@@ -1,4 +1,4 @@
-<div class="flex flex-col h-screen ">
+<div class="flex flex-col  h-screen ">
   
   <header class="navbar sticky top-0 z-50 bg-white shadow-md grid grid-cols-3 items-center px-6 py-4 h-20">
   
@@ -7,31 +7,44 @@
         <span class="site-name font-bold text-xl text-gray-800">GOLINK</span>
     </div>
 
-    <nav class="nav-links flex items-center justify-center gap-6">
-        <a routerLink="/" fragment="hero" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
-        <a routerLink="/" fragment="features" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Features</a>
-        <a routerLink="/" fragment="about" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
-        <a routerLink="/" fragment="contact" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
-
+    <nav class="nav-links flex items-center justify-center gap-7 rounded-4xl p-4 pb-3 bg-blue-900 hover:bg-blue-800 text-red-200">
+        <ul class="flex gap-6">
+            <li><a routerLink="/" fragment="hero" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors text-white font-semibold text-mid transition-colors ">Home</a></li>
+            <li><a routerLink="/" fragment="features" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors  text-white font-semibold   text-mid transition-colors ">Features</a></li>
+            <li><a routerLink="/" fragment="about" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors  text-white font-semibold   text-mid transition-colors ">About Us</a></li>
+            <li><a routerLink="/" fragment="contact" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors  text-white font-semibold  text-mid transition-colors ">Contact</a></li>
+        </ul>
     </nav>
     
     <div class="flex items-center justify-end gap-3">
-        <button class="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-1.5 px-4 rounded-3xl text-sm transition-colors shadow-sm">
+        <button class="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-1.5 px-4 rounded-3xl text-sm transition-colors shadow-sm"
+        routerLink="/auth/welcome/welcome">
           Get Started
         </button>
-        <button 
-          routerLink="/welcome"
+        <button
           class="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-1.5 px-4 rounded-3xl text-sm transition-colors shadow-sm">
           Learn More
         </button>
     </div>
+    <div class="backtotop">
+      @if (showbtn) {
+      <button 
+      class="fixed bottom-5 right-4 z-50 bg-blue-900 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center justify-center group">
+        <a routerLink="/" fragment="hero" class="pi pi-arrow-up"></a>
+      </button>
+      }
+    </div>
 
   </header>
-
-  <section id="hero" style="min-height: 100vh; background-color: red; padding: 100px 20px;">
-    <h1 class="text-6xl font-bold text-gray-800">The Secure Digital Government And Corporate Correspondence System</h1>
-    <p class="text-lg text-gray-600"s>The most secure way to communicate with the government and your corporation.</p>
+  
+  <section id="hero" style="min-height: 100vh;  padding: 100px 20px;">
+      <div class="grid gird-cols-3 flex bg-green-400">
+      <h1 class="text-5xl font-bold text-white py-2 ">New Digital Security </h1>
+      <h1 class="text-5xl font-bold text-blue-900 py-2">for ICT Solutions</h1>
+      </div>
+    <p class="text-lg text-gray-600 py-10 ">We excel in developing integrated software solutions, robust institutional systems, and innovative smart device applications — supporting your digital transformation through specialized consulting and training</p>
   </section>
+  
 
   <section id="features" style="min-height: 100vh; background-color: blue; padding: 100px 20px;">
     <h2>Features</h2>
@@ -39,6 +52,11 @@
   </section>
 
   <section id="about" style="min-height: 100vh; background-color: green; padding: 100px 20px;">
+    <h2>About Us</h2>
+    <p>Here you can write information about yourself or your company.</p>
+  </section>
+
+  <section id="contact" style="min-height: 100vh; background-color: navy; padding: 50px 10px;">
     <h2>About Us</h2>
     <p>Here you can write information about yourself or your company.</p>
   </section>

@@ -4,19 +4,19 @@ export const routes: Routes = [
     {
       path: '',
       pathMatch: 'full',
-      loadComponent: () => import('./features/auth/welcome/welcome').then(m => m.Welcome)
+      loadComponent: () => import('./features/home/home').then(m => m.Home)
     },
     { 
         path: 'auth/login', 
          loadComponent: () => import('./features/auth/login/login').then(m => m.Login) 
     },
     { 
-      path: 'auth/singup', // تم تصحيح طريقة التحميل هنا أيضاً
+      path: 'auth/singup', 
       loadComponent: () => import('./features/auth/singup/singup').then(m => m.Singup) 
     },
     {
-      path: 'home',
-      loadComponent: () => import('./features/home/home').then(m => m.Home)
+      path: 'auth/welcome/welcome',
+      loadComponent: () => import('./features/auth/welcome/welcome').then(m => m.Welcome)
     }
    
 ];

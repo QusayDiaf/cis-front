@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter, withInMemoryScrolling } from '@angular/router'; // 1. قمنا باستيراد withInMemoryScrolling هنا
+import { provideRouter, withInMemoryScrolling } from '@angular/router'; // استيراد وسم التمرير فقط
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { routes } from './app.routes';
@@ -10,23 +10,23 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(),
     
-    // 2. تعديل الـ Router لتفعيل الـ Anchor Scrolling
     provideRouter(
       routes,
-      withInMemoryScrolling({
-        anchorScrolling: 'enabled',          // يفعل النزول للـ ID المحدد
-        scrollPositionRestoration: 'enabled' // يحافظ على موقع الصفحة عند التنقل
+      // دالة واحدة تكفي لإدارة كل تفاصيل السكرول والتنقل لـ Fragments
+      withInMemoryScrolling({ 
+        scrollPositionRestoration: 'enabled', // إرجاع السكرول للأعلى عند الانتقال لصفحة جديدة
+        anchorScrolling: 'enabled'            // تفعيل التنقل الداخلي للروابط (Fragments)
       })
     ),
     
     providePrimeNG({
       ripple: true,
-      theme:{ 
+      theme: { 
         preset: Aura,
         options: {
             darkModeSelector: 'none' 
         }
-      } ,
+      },
     }),
   ]
 };
