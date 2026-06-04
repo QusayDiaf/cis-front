@@ -7,7 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -19,8 +19,7 @@ import { HttpClient } from '@angular/common/http';
 export class Login {
   loginForm!: FormGroup;
 
-  // depindency injection
-  constructor(private fb: FormBuilder ,private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
   this.loginForm = this.fb.group({
     email: ['', 
       {
@@ -50,7 +49,7 @@ export class Login {
   onsubmit() {
     console.log("the form is submitted");
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value ,"the form value");
+      // console.log(this.loginForm.value ,"the form value");
     } else {
       console.log("the form is invalid");
       this.loginForm.markAllAsTouched();
@@ -58,14 +57,23 @@ export class Login {
     if(this.loginForm.valid){
       const apiUrl = 'http://127.0.0.1:8000/api/login';
       console.log("loading ... the form is valid and sending to api");
-      this.http.post(apiUrl, this.loginForm.value ,{ responseType: 'text' }).subscribe({
-        next: (response) => {
+      this.http.post(apiUrl, this.loginForm.value ).subscribe({
+        next: (response: any) => {
           console.log('API connection successful', response);
-          alert('sing in successfully!');
+          const email = this.loginForm.value.email;
+          const userName = response?.user?.name || response?.name || email.split('@')[0] || 'User';
+          const authUser = {
+            name: userName,
+            email,
+            token: response?.token || response?.access_token || ''
+          };
+          localStorage.setItem('authUser', JSON.stringify(authUser));
+          alert('Signed in successfully!');
+          this.router.navigate(['/']);
         },
         error: (err) => {
           console.error('API connection error', err);
-          alert('Failed to sign in.');
+          alert('Invalid username or password.');
         }
       }); 
     } else {
@@ -73,6 +81,7 @@ export class Login {
       this.loginForm.markAllAsTouched();
     }
   }
+  
 
   rememberme: boolean = false;
   

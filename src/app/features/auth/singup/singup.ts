@@ -67,7 +67,7 @@ export class Singup {
     console.log("the form is submitted");
 
     if (this.singupform.valid) {
-      console.log(this.singupform.value, "the form value");
+      // console.log(this.singupform.value, "the form value");
       
       const apiUrl = 'http://127.0.0.1:8000/api/register';
       console.log("loading ... the form is valid and sending to api");
@@ -79,8 +79,8 @@ export class Singup {
           },
         error: (err) => {
           console.error('API connection error', err);
-          console.log('السبب القادم من لارافيل:', err.error);
-          alert('api connection failed.');
+          console.log('الاكسبشن متع لارفل النفاخة', err.error);
+          alert('the email is used before');
         }
       }); 
 
