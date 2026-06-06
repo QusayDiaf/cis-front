@@ -69,7 +69,7 @@ export class Singup {
     if (this.singupform.valid) {
       // console.log(this.singupform.value, "the form value");
       
-      const apiUrl = 'http://127.0.0.1:8000/api/register';
+      const apiUrl = 'https://59fc9cf4a8b1d149-165-16-127-31.serveousercontent.com/api/register';
       console.log("loading ... the form is valid and sending to api");
 
       this.http.post(apiUrl, this.singupform.value).subscribe({
